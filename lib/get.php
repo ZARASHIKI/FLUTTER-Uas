@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin',"*");
+header('Access-Control-Allow-Origin: *');
 $servername = "localhost";
 $username = "root"; // sesuaikan dengan username db masing-masing
 $password = ""; // sesuaikan dengan password db masing-masing

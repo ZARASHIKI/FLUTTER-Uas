@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uas/insert.dart';
 import 'package:uas/zodiac.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
@@ -85,7 +86,8 @@ class _homeState extends State<home> {
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // _navigateAndDisplayAddForm(context);
+          Route route = MaterialPageRoute(builder: (context) => create());
+          Navigator.push(context, route);
         },
         child: Icon(Icons.add),
       ),
@@ -93,11 +95,12 @@ class _homeState extends State<home> {
   }
 
   @override
+  // ignore: must_call_super
   void dispose() {}
 
   Future<List<Zodiac>> fetchZodiac() async {
-    final response =
-        await http.get(Uri.parse('http://localhost/flutteruas/lib/get.php'));
+    final response = await http
+        .get(Uri.parse('http://172.70.11.38:8080/flutteruas/lib/get.php'));
 
     final decoded = jsonDecode(response.body);
     final List<Zodiac> zodiacs = [];

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uas/home.dart';
 import 'package:uas/me.dart';
-import 'package:uas/zodiac.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'dart:async';
 
 void main() {
   runApp(const MyApp());
@@ -56,8 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.home),
               label: 'HOME',
             ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: 'SETTING'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'ABOUT'),
           ],
           currentIndex: _selectedindex,
           onTap: _changeSelectedNavBar,
